@@ -28,3 +28,16 @@ def main():
     with DBHandler():
         db_backup()
 
+## Context Manager out of a Function
+
+import contextlib
+
+@contextlib.contextmanager
+def db_handler():
+    stop_database()
+    yield
+    start_database()
+
+
+with db_handler():
+    db_backup()
