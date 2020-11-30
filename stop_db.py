@@ -27,3 +27,4 @@ def db_backup():
 def main():
     with DBHandler():
         db_backup()
+
